@@ -1,5 +1,5 @@
 {
-  "name": "react-floating-whatsapp",
+  "name": "@bdebeltran25/react-floating-whatsapp",
   "version": "5.0.8",
   "private": false,
   "description": "Simple React Component for adding a floating WhatsApp button to your project.",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/awran5/react-floating-whatsapp.git"
+    "url": "https://github.com/bdebeltran/react-floating-whatsapp"
   },
   "bugs": {
     "url": "https://github.com/awran5/react-floating-whatsapp/issues"

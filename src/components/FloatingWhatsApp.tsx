@@ -70,6 +70,12 @@ export interface FloatingWhatsAppProps {
 
   /** Inline style applied to button */
   buttonStyle?: React.CSSProperties
+  /** Inline style applied to header */
+  headerStyle?: React.CSSProperties
+  /** Inline style applied to body */
+  bodyStyle?: React.CSSProperties
+  /** Inline style applied to footer */
+  footerStyle?: React.CSSProperties
   /** CSS className applied to button */
   buttonClassName?: string
 }
@@ -102,6 +108,9 @@ export function FloatingWhatsApp({
   notificationClassName = 'floating-whatsapp-notification',
 
   buttonStyle,
+  headerStyle,
+  bodyStyle,
+  footerStyle,
   buttonClassName = 'floating-whatsapp-button',
 
   chatboxHeight = 320,
@@ -229,7 +238,7 @@ export function FloatingWhatsApp({
         aria-hidden='true'
         style={{ height: isOpen ? chatboxHeight : 0, ...chatboxStyle }}
       >
-        <header className={css.chatHeader}>
+        <header className={css.chatHeader} style={headerStyle}>
           <div className={css.avatar}>
             <img src={avatar} width='60' height='60' alt='whatsapp-avatar' />
           </div>
@@ -242,7 +251,7 @@ export function FloatingWhatsApp({
           </div>
         </header>
 
-        <div className={css.chatBody} style={{ backgroundImage: `url(${darkMode ? darkBG : lightBG})` }}>
+        <div className={css.chatBody} style={bodyStyle?bodyStyle:{ backgroundImage: `url(${darkMode ? darkBG : lightBG})` }}>
           {isDelay ? (
             <div className={css.chatBubble}>
               <div className={css.typing}>
@@ -266,7 +275,7 @@ export function FloatingWhatsApp({
           )}
         </div>
 
-        <footer className={css.chatFooter}>
+        <footer className={css.chatFooter} style={footerStyle}>
           <form onSubmit={handleSubmit}>
             <input className={css.input} placeholder={placeholder} ref={inputRef} dir='auto' />
             <button type='submit' className={css.buttonSend}>
